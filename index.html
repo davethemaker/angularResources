@@ -11,15 +11,30 @@
 	<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-	<div class="container">
-		<p>Angular Resources</p>
-		<div ng-controller="PeopleCtrl">
-			<ul>
-				<li ng-repeat=" person in persons">
-					<span class="text-warning">{{person.name}}</span>
-				</li>
-			{{persons}}
-		</div>
+	<div class="container" ng-controller="PeopleCtrl">
+		{{persons}}
+		<div class="row">
+			<div class="col-md-8">
+			<p>Angular Resources</p>
+					<div>
+						<ul>
+							<li ng-repeat="person in persons">
+								<span class="text-warning">{{person.name}}</span>
+							</li>
+						</ul>
+					</div>
+			</div>
+			<div class="col-md-4">
+				<h5>Add a new Person</h5>
+				<p>People: {{persons}}</p>
+				<form ng-submit="addPerson()" class="form-inline" role="form">
+					<div class="form-group">
+						<input type="text" ng-model="personName" class="form-control" placeholder="Enter name">
+					</div>
+					<button type="submit" class="btn btn-success">Submit</button>
+				</form>
+			</div>
+		</div>	
 	</div>
 </body>
 </html>
