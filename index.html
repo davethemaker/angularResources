@@ -19,7 +19,13 @@
 						<div>
 							<ul>
 								<li ng-repeat="person in persons">
-									<span class="text-warning">{{person.name}}</span>
+									<span ng-click="editing=true"  ng-hide="editing" class="text-warning">{{person.name}}</span>
+									<span class="form-group" ng-show="editing" ng-submit="editing=false">
+										<form class="form-inline" role="form">
+											<input type="text" class="form-control input-sm" ng-model="person.name" placeholder="Name" required />
+											<button class="btn btn-default btn-sm" type="submit">Save</button>
+										</form>
+									</span>
 									<span class="text-success"> {{person.occupation}}</span>
 									<a ng-click="deletePerson(item)">Delete</a>
 								</li>
