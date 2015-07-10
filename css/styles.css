@@ -51,6 +51,7 @@ body {
 
 #navbar {
 	background-color: yellow;
+	opacity: 0.4;
 }
 
 #navbar ul {
@@ -60,4 +61,6 @@ body {
 }
 #navbar li {
 	display: inline;
+	padding: 20px;
+	
 }
