@@ -11,7 +11,7 @@ angularResources.factory('ResourcesFactory', function ResourcesFactory(){
 	];
 	factory.addPerson = function(){
 		var person = { name: factory.personName,
-		  occupation: factory.personOccupation};
+		  occupation: factory.personOccupation };
 
 		factory.persons.push(person);
 		factory.personName = "";
@@ -21,6 +21,32 @@ angularResources.factory('ResourcesFactory', function ResourcesFactory(){
 	factory.deletePerson = function(person){
 		var index = factory.persons.indexOf(person);
 		factory.persons.splice(index,1);
+	};
+
+	factory.books = [
+	{
+		title: "2001: A Space Odyssey",
+		description: "A space novel"
+	},
+	{
+		title: "The Great Houndini",
+		description: "Dont box me in he said"
+	}];
+
+	factory.websites = [];
+
+	factory.addBook = function(){
+		factory.books.push(
+		{
+			title : factory.bookTitle,
+			description: factory.bookDescription
+		});
+		factory.bookTitle = null;
+		factory.bookDescription = null;
+	};
+	factory.deleteBook = function(book){
+		var index= factory.books.indexOf(book);
+		factory.books.splice(index,1);
 	};
 	return factory;
 })
