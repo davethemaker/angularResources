@@ -17,6 +17,14 @@
 		<div class="row" ng-controller="PeopleCtrl">
 			<div class="col-xs-12">
 				<h3>Angular Resources</h3>
+				<div id="navbar">
+					<ul>
+						<li><a ui-sref="home">Home</a></li>
+						<li><a ui-sref="books">Books</a></li>
+						<li><a ui-sref="persons">People</a></li>
+						<li><a ui-sref="websites">Websites</a></li>
+					</ul>
+				</div>
 				<div id="whatIsAngular">
 					<span ng-click="show=true">What is angularJS?</span>
 					<span ng-show="show" >
