@@ -33,8 +33,6 @@ angularResources.factory('ResourcesFactory', function ResourcesFactory(){
 		description: "Dont box me in he said"
 	}];
 
-	factory.websites = [];
-
 	factory.addBook = function(){
 		factory.books.push(
 		{
@@ -48,5 +46,29 @@ angularResources.factory('ResourcesFactory', function ResourcesFactory(){
 		var index= factory.books.indexOf(book);
 		factory.books.splice(index,1);
 	};
+
+	factory.websites = [
+	{
+		name: "AngularJS",
+		url: "https://angularjs.org/"
+	}
+	];
+	
+
+	factory.addWebsite = function(){
+		factory.websites.push(
+		{
+			name: factory.websiteName,
+			url: factory.websiteURL
+		});
+		factory.websiteName = null;
+		factory.websiteURL = null;
+	};
+
+	factory.deleteWebsite = function(website){
+		var index = factory.websites.indexOf(website);
+		factory.websites.splice(index,1);
+	};
+
 	return factory;
 })
