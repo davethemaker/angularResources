@@ -8,7 +8,7 @@
   display: block;
   position: fixed;
   top: 0;
-  left: 0;
+  left: 50;
    min-width: 100%;
   min-height: 100%;
 }
@@ -34,7 +34,7 @@ body {
 	background-color: #87C1E6;
 }
 
-h1,h2,h3,h4,h5 {
+h1,h2,h3,h4,h5,p {
 	padding-left: 30px;
 }
 
