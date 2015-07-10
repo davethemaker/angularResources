@@ -15,25 +15,26 @@
 		<div class="row">
 			<div class="col-xs-6">
 				<div id="left_content">
-				<p>Angular Resources</p>
+				<h3>Angular Resources</h3>
 						<div>
 							<ul>
 								<li ng-repeat="person in persons">
 									<span class="text-warning">{{person.name}}</span>
+									<span class="text-success"> {{person.occupation}}</span>
 								</li>
 							</ul>
+							<form ng-submit="addPerson()" class="form-inline" role="form">
+						<div class="form-group">
+							<input type="text" ng-model="personName" class="form-control" placeholder="Enter name">
+							<input type="text" ng-model="personOccupation" class="form-control" placeholder="Enter occupation">
+						</div>
+						<button type="submit" class="btn btn-success">Submit</button>
+					</form>
 						</div>
 				</div>
 			</div>
 			<div class="col-xs-6">
 				<div id="right_content">
-					<h5>Add a new Person</h5>
-					<form ng-submit="addPerson()" class="form-inline" role="form">
-						<div class="form-group">
-							<input type="text" ng-model="personName" class="form-control" placeholder="Enter name">
-						</div>
-						<button type="submit" class="btn btn-success">Submit</button>
-					</form>
 				</div>
 			</div>
 		</div>	

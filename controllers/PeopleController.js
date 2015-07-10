@@ -1,15 +1,20 @@
 angularResources.controller('PeopleCtrl', function PeopleCtrl($scope){
-	$scope.box = ["one","two"];
+	$scope.numbers = ["one","two"];
 	$scope.persons = [
-		{ name: "Tom Schmitz"},
-		{ name: "Judy Schmitz"},
-		{ name: "Jill Schmitz"}
+		{ name: "Tom Schmitz",
+		  occupation: "barista"},
+		{ name: "Judy Schmitz",
+		  occupation: "construction"},
+		{ name: "Jill Schmitz",
+		  occupation: "project manager"}
 	];
 	$scope.addPerson = function(){
 		$scope.persons.push(
 		{
-			name: $scope.personName
+			name: $scope.personName,
+			occupation: $scope.personOccupation
 		});
 		$scope.personName = "";
+		$scope.personOccupation = "";
 	};
 });
