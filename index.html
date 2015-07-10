@@ -8,14 +8,14 @@
 	<script src="controllers/PeopleController.js"></script>
 	<script src="controllers/DigitalController.js"></script>
 	<script src="services/ResourcesFactory.js"></script>
+	<script src="lib/angular-ui-router.js"></script>
 	<link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 	<div class="container-fluid" >
 		<div class="row" ng-controller="PeopleCtrl">
-			<div class="col-xs-6">
-				<div id="left_content">
+			<div class="col-xs-12">
 				<h3>Angular Resources</h3>
 				<div id="whatIsAngular">
 					<span ng-click="show=true">What is angularJS?</span>
@@ -24,94 +24,9 @@
 						<span ng-click="show=false"><button type="button" class="btn btn-success btn-xs" >Finished</button></span>
 					</span>
 				</div>
-				<div >
-					<div ng-show="persons.length" id="personQuery">
-						<input type="text" ng-model="nameQuery" placeholder="search by name" />
-						<input type="text" ng-model="occupationQuery" placeholder="search by occupation" />
-					</div>
-					<ul ng-show="persons.length">
-						<li ng-repeat="person in persons | filter: nameQuery | filter: occupationQuery">
-							<span ng-click="editing=true"  ng-hide="editing" class="text-warning">{{person.name}}</span>
-							<span class="form-group" ng-show="editing" ng-submit="editing=false">
-								<form class="form-inline" role="form">
-									<input type="text" class="form-control input-sm" ng-model="person.name" placeholder="Name" required />
-									<button class="btn btn-default btn-sm" type="submit">Save</button>
-								</form>
-							</span>
-							<span class="text-success"> {{person.occupation}}</span>
-							<a ng-click="ResourcesFactory.deletePerson(person)">Delete</a>
-						</li>
-					</ul>
-					<form ng-submit="ResourcesFactory.addPerson()" class="form-inline" role="form">
-						<div class="form-group">
-							<input type="text" ng-model="ResourcesFactory.personName" class="form-control" placeholder="Enter new name">
-							<input type="text" ng-model="ResourcesFactory.personOccupation" class="form-control" placeholder="Enter new occupation">
-						</div>
-						<button type="submit" class="btn btn-success">Submit</button>
-					</form>
-				</div>
-			</div>
-			<div class="col-xs-6">
-				<div id="right_content">
-				</div>
-			</div>
-		</div>	
+			</div>	
+		</div>
+		<div ui-view></div>
 	</div>
-	<div class="row" ng-controller="DigitalCtrl">
-	  <div class="col-xs-4">
-		<h5 ng-show="!books.length" class="text-warning">More coming soon, or add one please</h5>
-		<h3 ng-show="books.length">Book Resources:</h3>
-		<input type="text" ng-model="titleQuery" placeholder="search by title" </>
-		<ul>
-			<li ng-repeat="book in books | filter: titleQuery">
-				<span ng-click="editing=true"  ng-hide="editing" class="text-warning">{{book.title}}</span>
-				<span class="form-group" ng-show="editing" ng-submit="editing=false">
-					<form class="form-inline" role="form">
-						<input type="text" class="form-control input-sm" ng-model="book.title" placeholder="Title" required />
-						<button class="btn btn-default btn-sm" type="submit">Save</button>
-					</form>
-				</span>
-				<span class="text-success"> {{book.description}}</span>
-				<a ng-click="ResourcesFactory.deleteBook(book)">Delete</a>
-			</li>
-		</ul>
-	  </div>
-	  <div class="col-xs-4">
-		<form ng-submit="ResourcesFactory.addBook()" class="form-inline" role="form">
-			<div class="form-group">
-				<input type="text" ng-model="ResourcesFactory.bookTitle" class="form-control" placeholder="Enter new title">
-				<input type="text" ng-model="ResourcesFactory.bookDescription" class="form-control" placeholder="Enter new description">
-			</div>
-			<button type="submit" class="btn btn-success">Submit</button>
-		</form>
-	  </div>
-	  <div class="col-xs-4">
-	  	<h5 ng-show="!websites.length" class="text-warning">More coming soon, or add one please</h5>
-		<h3 ng-show="websites.length">Website Resources:</h3>
-		<input type="text" ng-model="websiteQuery" placeholder="search by site name" </>
-		<ul>
-			<li ng-repeat="website in websites | filter: websiteQuery">
-				<span ng-click="editing=true"  ng-hide="editing" class="text-warning">	{{website.name}}
-				</span>
-				<span class="form-group" ng-show="editing" ng-submit="editing=false">
-					<form class="form-inline" role="form">
-						<input type="text" class="form-control input-sm" ng-model="website.name" placeholder="Name" required />
-						<button class="btn btn-default btn-sm" type="submit">Save</button>
-					</form>
-				</span>
-				<span class="text-success"> {{website.url}}</span>
-				<a ng-click="ResourcesFactory.deleteWebsite(website)">Delete</a>
-			</li>
-		</ul>
-		<form ng-submit="ResourcesFactory.addWebsite()" class="form-inline" role="form">
-			<div class="form-group">
-				<input type="text" ng-model="ResourcesFactory.websiteName" class="form-control" placeholder="Enter new website name">
-				<input type="text" ng-model="ResourcesFactory.websiteURL" class="form-control" placeholder="Enter new site URL">
-			</div>
-			<button type="submit" class="btn btn-success">Submit</button>
-		</form>
-	  </div>
-	</div>
-</div>
 </body>
 </html>

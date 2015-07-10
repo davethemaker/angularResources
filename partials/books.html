@@ -1,0 +1,28 @@
+<div class="row" ng-controller="DigitalCtrl">
+	  <div class="col-xs-4">
+		<h5 ng-show="!books.length" class="text-warning">More coming soon, or add one please</h5>
+		<h3 ng-show="books.length">Book Resources:</h3>
+		<input type="text" ng-model="titleQuery" placeholder="search by title" </>
+		<ul>
+			<li ng-repeat="book in books | filter: titleQuery">
+				<span ng-click="editing=true"  ng-hide="editing" class="text-warning">{{book.title}}</span>
+				<span class="form-group" ng-show="editing" ng-submit="editing=false">
+					<form class="form-inline" role="form">
+						<input type="text" class="form-control input-sm" ng-model="book.title" placeholder="Title" required />
+						<button class="btn btn-default btn-sm" type="submit">Save</button>
+					</form>
+				</span>
+				<span class="text-success"> {{book.description}}</span>
+				<a ng-click="ResourcesFactory.deleteBook(book)">Delete</a>
+			</li>
+		</ul>
+	  </div>
+	  <div class="col-xs-4">
+		<form ng-submit="ResourcesFactory.addBook()" class="form-inline" role="form">
+			<div class="form-group">
+				<input type="text" ng-model="ResourcesFactory.bookTitle" class="form-control" placeholder="Enter new title">
+				<input type="text" ng-model="ResourcesFactory.bookDescription" class="form-control" placeholder="Enter new description">
+			</div>
+			<button type="submit" class="btn btn-success">Submit</button>
+		</form>
+	  </div>

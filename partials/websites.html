@@ -1,0 +1,26 @@
+<div class="col-xs-4">
+	  	<h5 ng-show="!websites.length" class="text-warning">More coming soon, or add one please</h5>
+		<h3 ng-show="websites.length">Website Resources:</h3>
+		<input type="text" ng-model="websiteQuery" placeholder="search by site name" </>
+		<ul>
+			<li ng-repeat="website in websites | filter: websiteQuery">
+				<span ng-click="editing=true"  ng-hide="editing" class="text-warning">	{{website.name}}
+				</span>
+				<span class="form-group" ng-show="editing" ng-submit="editing=false">
+					<form class="form-inline" role="form">
+						<input type="text" class="form-control input-sm" ng-model="website.name" placeholder="Name" required />
+						<button class="btn btn-default btn-sm" type="submit">Save</button>
+					</form>
+				</span>
+				<span class="text-success"> {{website.url}}</span>
+				<a ng-click="ResourcesFactory.deleteWebsite(website)">Delete</a>
+			</li>
+		</ul>
+		<form ng-submit="ResourcesFactory.addWebsite()" class="form-inline" role="form">
+			<div class="form-group">
+				<input type="text" ng-model="ResourcesFactory.websiteName" class="form-control" placeholder="Enter new website name">
+				<input type="text" ng-model="ResourcesFactory.websiteURL" class="form-control" placeholder="Enter new site URL">
+			</div>
+			<button type="submit" class="btn btn-success">Submit</button>
+		</form>
+	  </div>

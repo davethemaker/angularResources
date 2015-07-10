@@ -1,0 +1,27 @@
+				<div >
+					<h3>Persons</h3>
+					<div ng-show="persons.length" id="personQuery">
+						<input type="text" ng-model="nameQuery" placeholder="search by name" />
+						<input type="text" ng-model="occupationQuery" placeholder="search by occupation" />
+					</div>
+					<ul ng-show="persons.length">
+						<li ng-repeat="person in persons | filter: nameQuery | filter: occupationQuery">
+							<span ng-click="editing=true"  ng-hide="editing" class="text-warning">{{person.name}}</span>
+							<span class="form-group" ng-show="editing" ng-submit="editing=false">
+								<form class="form-inline" role="form">
+									<input type="text" class="form-control input-sm" ng-model="person.name" placeholder="Name" required />
+									<button class="btn btn-default btn-sm" type="submit">Save</button>
+								</form>
+							</span>
+							<span class="text-success"> {{person.occupation}}</span>
+							<a ng-click="ResourcesFactory.deletePerson(person)">Delete</a>
+						</li>
+					</ul>
+					<form ng-submit="ResourcesFactory.addPerson()" class="form-inline" role="form">
+						<div class="form-group">
+							<input type="text" ng-model="ResourcesFactory.personName" class="form-control" placeholder="Enter new name">
+							<input type="text" ng-model="ResourcesFactory.personOccupation" class="form-control" placeholder="Enter new occupation">
+						</div>
+						<button type="submit" class="btn btn-success">Submit</button>
+					</form>
+				</div>
