@@ -12,3 +12,7 @@ body {
 	padding: 20px 20px;
 
 }
+
+#displayText {
+	font-style-color: italic;
+}
