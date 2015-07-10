@@ -12,8 +12,12 @@
 </head>
 <body>
 	<div class="container">
-		<p>Hello world</p>
+		<p>Angular Resources</p>
 		<div ng-controller="PeopleCtrl">
+			<ul>
+				<li ng-repeat=" person in persons">
+					<span class="text-warning">{{person.name}}</span>
+				</li>
 			{{persons}}
 		</div>
 	</div>
