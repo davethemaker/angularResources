@@ -1,0 +1,1 @@
+var angularResources = angular.module('angularResources', []);

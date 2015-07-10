@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="angularResources">
+<head>
+	<meta charset="utf-8">
+	<title>AngularJS Resources</title>
+	<script src="js/angular.js"></script>
+	<script src="js/app.js"></script>
+	<script src="controllers/PeopleController.js"></script>
+
+	<link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+	<div class="container">
+		<p>Hello world</p>
+		<div ng-controller="PeopleCtrl">
+			{{persons}}
+		</div>
+	</div>
+</body>
+</html>
