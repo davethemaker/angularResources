@@ -17,4 +17,9 @@ angularResources.controller('PeopleCtrl', function PeopleCtrl($scope){
 		$scope.personName = "";
 		$scope.personOccupation = "";
 	};
+
+	$scope.deletePerson = function(person){
+		var index = $scope.persons.indexOf(person);
+		$scope.persons.splice(index,1);
+	};
 });
