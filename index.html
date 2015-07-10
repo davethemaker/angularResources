@@ -6,13 +6,13 @@
 	<script src="js/angular.js"></script>
 	<script src="js/app.js"></script>
 	<script src="controllers/PeopleController.js"></script>
-
+	<script src="controllers/DigitalController.js"></script>
 	<link rel="stylesheet" href="css/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-	<div class="container-fluid" ng-controller="PeopleCtrl">
-		<div class="row">
+	<div class="container-fluid" >
+		<div class="row" ng-controller="PeopleCtrl">
 			<div class="col-xs-6">
 				<div id="left_content">
 				<h3>Angular Resources</h3>
@@ -24,11 +24,11 @@
 					</span>
 				</div>
 				<div >
-					<div ng-show="persons.length>4" id="personQuery">
+					<div ng-show="persons.length" id="personQuery">
 						<input type="text" ng-model="nameQuery" placeholder="search by name" />
 						<input type="text" ng-model="occupationQuery" placeholder="search by occupation" />
 					</div>
-					<ul ng-show="persons.length>4">
+					<ul ng-show="persons.length">
 						<li ng-repeat="person in persons | filter: nameQuery | filter: occupationQuery">
 							<span ng-click="editing=true"  ng-hide="editing" class="text-warning">{{person.name}}</span>
 							<span class="form-group" ng-show="editing" ng-submit="editing=false">
@@ -56,5 +56,10 @@
 			</div>
 		</div>	
 	</div>
+	<div class="row" ng-controller="DigitalCtrl">
+		{{books}}
+		<p>hello there</p>
+	</div>
+</div>
 </body>
 </html>
