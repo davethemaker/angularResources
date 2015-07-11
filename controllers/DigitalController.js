@@ -2,6 +2,7 @@ angularResources.controller('DigitalCtrl', function DigitalCtrl($scope, Resource
 	$scope.books = ResourcesFactory.books;
 	$scope.websites = ResourcesFactory.websites;
 	$scope.ResourcesFactory = ResourcesFactory;
+	$scope.organizations = ResourcesFactory.organizations;
 
 
 });

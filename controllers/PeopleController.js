@@ -3,4 +3,5 @@ angularResources.controller('PeopleCtrl', function PeopleCtrl($scope, ResourcesF
 
 	$scope.persons = ResourcesFactory.persons;
 	$scope.ResourcesFactory = ResourcesFactory;
+
 });

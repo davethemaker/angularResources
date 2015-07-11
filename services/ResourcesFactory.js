@@ -68,5 +68,27 @@ angularResources.factory('ResourcesFactory', function ResourcesFactory(){
 		factory.websites.splice(index,1);
 	};
 
+	factory.organizations = [
+		{
+			name: "meetup",
+			id: 0,
+			members: ["Tom"],
+		}
+	];
+	factory.addOrganization = function(){
+		factory.organizations.push(
+		{
+			name: factory.organizationName,
+			id: factory.organizations.length + 1,
+			members: [],
+		});
+		factory.organizationName = null;
+	};
+
+	factory.deleteOrganization = function(organization){
+		var index = factory.organizations.indexOf(organization);
+		factory.organizations.splice(index,1);
+	}
+
 	return factory;
 })
