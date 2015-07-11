@@ -4,6 +4,7 @@
 						<input type="text" ng-model="nameQuery" placeholder="search by name" />
 						<input type="text" ng-model="occupationQuery" placeholder="search by occupation" />
 					</div>
+
 					<ul ng-show="persons.length">
 						<li ng-repeat="person in persons | filter: nameQuery | filter: occupationQuery">
 							<span ng-click="editing=true"  ng-hide="editing" class="text-warning">{{person.name}}</span>
@@ -25,3 +26,5 @@
 						<button type="submit" class="btn btn-success">Submit</button>
 					</form>
 				</div>
+
+				<div ui-view></div>

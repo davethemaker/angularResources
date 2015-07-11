@@ -1,17 +1,15 @@
 angularResources.factory('ResourcesFactory', function ResourcesFactory(){
 	var factory = {};
 
-	factory.persons = [
-		{ name: "Tom Schmitz",
-		  occupation: "barista"},
-		{ name: "Judy Schmitz",
-		  occupation: "construction"},
-		{ name: "Jill Schmitz",
-		  occupation: "project manager"}
-	];
+	factory.persons = [];
+	
 	factory.addPerson = function(){
-		var person = { name: factory.personName,
-		  occupation: factory.personOccupation };
+		var person = { 
+			name: factory.personName,
+		    occupation: factory.personOccupation,
+			id: factory.persons.length+1,
+			books: [],
+		};
 
 		factory.persons.push(person);
 		factory.personName = "";

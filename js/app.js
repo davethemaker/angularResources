@@ -23,4 +23,9 @@ angularResources.config(function($stateProvider){
 		templateUrl:"partials/websites.html",
 		controller: 'DigitalCtrl'
 	});
+	$stateProvider.state('organizations', {
+		url: "/organizations",
+		templateUrl:"partials/organizations.html",
+		controller: 'DigitalCtrl'
+	});
 });
