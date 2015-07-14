@@ -23,13 +23,10 @@ angularResources.factory('ResourcesFactory', function ResourcesFactory(){
 
 	factory.books = [
 	{
-		title: "2001: A Space Odyssey",
-		description: "A space novel"
+		title: "AngularJS: Definitive Guide",
+		description: "A huge book, thorough"
 	},
-	{
-		title: "The Great Houndini",
-		description: "Dont box me in he said"
-	}];
+	];
 
 	factory.addBook = function(){
 		factory.books.push(

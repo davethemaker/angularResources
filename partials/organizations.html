@@ -5,7 +5,7 @@
 		<ul>
 			<li ng-repeat="organization in organizations">
 				
-				<a ui-sref="organizations.members({ organizationId: organization.id })">{{ organization.name}}{{organization.id}}{{organization.members}}</a>
+				<a ui-sref="organizations.members({ organizationId: organization.id })">{{ organization.name}}</a>
 			</li>
 		</ul>
 		<form ng-submit="ResourcesFactory.addOrganization()" class="form-inline" role="form">
