@@ -1,16 +1,19 @@
 <div class="col-xs-4">
 	  	<h5 ng-show="!organizations.length" class="text-warning">More coming soon, or add one please</h5>
 		<h3 ng-show="organizations.length">Here are all the Organizational Resources:</h3>
+
 		<!-- <input type="text" ng-model="organizationQuery" placeholder="search by organization name" </> -->
 		<ul>
 			<li ng-repeat="organization in organizations">
 				
 				<a ui-sref="organizations.members({ organizationId: organization.id })">{{ organization.name}}</a>
+				<a ui-sref="organizations.info({ organizationInfoId: organization.id })">(details)</a>
 			</li>
 		</ul>
 		<form ng-submit="ResourcesFactory.addOrganization()" class="form-inline" role="form">
 			<div class="form-group">
 				<input type="text" ng-model="ResourcesFactory.organizationName" class="form-control" placeholder="Enter new organization name">
+				<input type="text" ng-model="ResourcesFactory.organizationDetails" class="form-control" placeholder="Enter any details">
 			</div>
 			<button type="submit" class="btn btn-success">Submit</button>
 		</form>

@@ -34,4 +34,9 @@ angularResources.config(function($stateProvider){
 		templateUrl:"partials/organizations.members.html",
 		controller:'DigitalCtrl'
 	});
+	$stateProvider.state('organizations.info',{
+		url:"/:organizationInfoId",
+		templateUrl:"partials/organizations.info.html",
+		controller:'DigitalCtrl'
+	});
 });

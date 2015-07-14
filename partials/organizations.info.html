@@ -1,0 +1,17 @@
+
+<!-- <div ng-show="organization.members.length"> -->
+<div>
+	<h3>Details for {{organization.name}}</h3>
+	<ul>
+		{{organization.details}}
+	</ul>
+</div>
+
+<div ng-show="organization.members.length">
+	<h3>Member list for {{organization.name}}</h3>
+	<ul>
+		<li ng-repeat="member in organization.members">
+			{{member.name}}
+		</li>
+	</ul>
+</div>

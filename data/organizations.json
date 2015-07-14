@@ -1,0 +1,17 @@
+{
+	"organizations":{
+
+		"-org1": {
+			"name": "AngularJS",
+			"id": 0,
+			"members": [],
+			"details": "The mothership"
+				},
+		"-org2": {
+			"name": "Meetups",
+			"id": 1,
+			"members": [],
+			"details": "The networking"
+				}
+	}
+}

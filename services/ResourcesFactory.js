@@ -72,9 +72,13 @@ angularResources.factory('ResourcesFactory', function ResourcesFactory(){
 			name: factory.organizationName,
 			id: factory.organizations.length + 1,
 			members: [],
+			details: factory.organizationDetails,
 		});
 		factory.organizationName = null;
+		factory.organizationDetails = null;
 	};
+
+
 
 	factory.deleteOrganization = function(organization){
 		var index = factory.organizations.indexOf(organization);
