@@ -68,13 +68,7 @@ angularResources.factory('ResourcesFactory', function ResourcesFactory(){
 		factory.websites.splice(index,1);
 	};
 
-	factory.organizations = [
-		{
-			name: "meetup",
-			id: 0,
-			members: ["Tom"],
-		}
-	];
+	factory.organizations = [];
 	factory.addOrganization = function(){
 		factory.organizations.push(
 		{
@@ -88,7 +82,16 @@ angularResources.factory('ResourcesFactory', function ResourcesFactory(){
 	factory.deleteOrganization = function(organization){
 		var index = factory.organizations.indexOf(organization);
 		factory.organizations.splice(index,1);
-	}
+	};
+
+	factory.findById = function(collection, id) {
+	    for (var i = 0; i < collection.length; i++) {
+	      if (collection[i].id == id) {
+	        return collection[i];
+	      }
+	    }
+    return null;
+  };
 
 	return factory;
-})
+});
