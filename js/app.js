@@ -1,4 +1,7 @@
-var angularResources = angular.module('angularResources', ['ui.router']);
+var angularResources = angular.module('angularResources', [
+	'ui.router',
+	'firebase',
+	]);
 
 angularResources.config(function($stateProvider){
 	$stateProvider.state('home', {
