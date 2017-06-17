@@ -1,0 +1,30 @@
+{
+  "name": "angularresources",
+  "version": "1.0.0",
+  "description": "front-end angular with firebase",
+  "main": "index.js",
+  "engines": {
+    "node": "6.9.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davethemaker/angularResources.git"
+  },
+  "keywords": [
+    "angular",
+    "firebose"
+  ],
+  "author": "David Eliason",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/davethemaker/angularResources/issues"
+  },
+  "homepage": "https://github.com/davethemaker/angularResources#readme",
+  "dependencies": {
+    "dotenv": "^4.0.0"
+  }
+}
