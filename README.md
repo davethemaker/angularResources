@@ -5,6 +5,8 @@ This is an app that serves a dual purpose of sharing informational resources to 
 ###7/9/2015
 ###Written By: [David Eliason](http://www.thedavideliason.com)
 
+[Return to Portfolio](https://davideliason.github.io/)
+
 ####Directions: 
 
 First, clone the repository:
@@ -22,6 +24,8 @@ $ python -m SimpleHTTPServer
 Lastly, once the server has started, open up a browser window with the URL address of localhost:8000
 
 ![angularResources](./angularResources.png "angular resources")
+
+[Return to Portfolio](https://davideliason.github.io/)
 
 ###MIT License
 ####An app built on AngularJS that shares AngularJS resources and tips
