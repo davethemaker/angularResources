@@ -1,13 +1,16 @@
-#angular resources
+# Angular Resources
 
 This is an app that serves a dual purpose of sharing informational resources to the user, as well as practice using the different technologies.
 
-###7/9/2015
-###Written By: [David Eliason](http://www.thedavideliason.com)
+## 7/9/2015
+## Written By: [David Eliason](http://www.davethemaker.com)
+
+### An app built on AngularJS that shares AngularJS resources and tips
+### Objective: to use directives, partials, views, controllers, factories
 
 [Return to Portfolio](https://davideliason.github.io/)
 
-####Directions: 
+### Directions: 
 
 First, clone the repository:
 ```
@@ -27,6 +30,5 @@ Lastly, once the server has started, open up a browser window with the URL addre
 
 [Return to Portfolio](https://davideliason.github.io/)
 
-###MIT License
-####An app built on AngularJS that shares AngularJS resources and tips
-####Objective: to use directives, partials, views, controllers, factories
+MIT License
+
